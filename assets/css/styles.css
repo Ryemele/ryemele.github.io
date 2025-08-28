@@ -1,68 +1,120 @@
+/* ---------- Reset léger ---------- */
+* { box-sizing: border-box; }
+img { max-width: 100%; display: block; }
+
+/* ---------- Accessibilité (lien d’évitement) ---------- */
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus {
+  position: static; width: auto; height: auto; padding: 8px 12px;
+  background: #000; color: #fff; border-radius: 6px;
+}
+
+/* ---------- Base ---------- */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.55;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* Conteneur principal */
+main { 
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
 }
 
+/* Titres */
+h1, h2, h3 { margin: 0 0 8px; }
+h2 { margin-top: 24px; }
+
+/* Liens */
+a { color: #0b63f6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- En-tête ---------- */
+/* Compat: styles si <header> sans classe ET si .site-header est utilisé */
+header, .site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 16px;
+}
+
+/* Bloc identité (nom + avatar) */
+.id-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto 12px;
+  max-width: 1000px;
+}
+.avatar {
+  width: 96px; height: 96px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* Nav */
+nav { max-width: 1000px; margin: 0 auto; }
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;            /* au lieu d’inline */
+    gap: 16px;
+    flex-wrap: wrap;
 }
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
+nav ul li { margin: 0; }
 nav ul li a {
     color: white;
-    text-decoration: none;
     font-weight: bold;
 }
+nav ul li a:hover { text-decoration: underline; }
 
+/* ---------- Sections ---------- */
 section {
-    padding: 50px;
-    text-align: center;
+  padding: 40px 0;
 }
 
+/* ---------- Grille projets ---------- */
+/* Passe de flex à grid pour un rendu plus propre et responsive */
 .project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .project {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: center;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  text-align: left;
 }
 
 .project img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
+.project h3 { margin: 8px 0; }
+.project p  { margin: 6px 0; }
+
+/* ---------- Contact ---------- */
+#contact p { margin: 8px 0; }
+
+/* ---------- Pied de page ---------- */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  /* pas de position fixed/absolute: évite les chevauchements */
 }
