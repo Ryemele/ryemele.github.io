@@ -1,63 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Richardson Yemele</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Richardson Yemele</title>
+  <meta name="description" content="Étudiant ingénieur Télécoms. Projets en C/SDL2, Java, vision, réseaux & cybersécurité." />
+
+  <!-- Canonical + favicon (mets bien le fichier à l’emplacement indiqué) -->
+  <link rel="canonical" href="https://ryemele.github.io/" />
+  <link rel="icon" href="/assets/img/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio — Richardson Yemele" />
+  <meta property="og:description" content="Projets en C/SDL2, Java, vision, réseaux & cybersécurité." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ryemele.github.io/" />
+  <meta property="og:image" content="https://ryemele.github.io/assets/img/cover.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Feuille de style -->
+  <!-- (j’ai déplacé le chemin vers assets/css pour une arbo propre) -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Richardson Yemele</h1>
-        <p>Étudiant Ingénieur en Télécommunications | Développement | Sécurité</p>
-        <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>À propos</h2>
-        <p>Étudiant passionné par les réseaux, la cybersécurité et le développement logiciel, je réalise divers projets académiques et personnels.</p>
+  <!-- Lien d’évitement pour l’accessibilité -->
+  <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    Aller au contenu principal
+  </a>
+
+  <header role="banner">
+    <h1>Richardson Yemele</h1>
+    <p>Étudiant Ingénieur en Télécommunications · Développement · Sécurité</p>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">À propos</h2>
+      <p>
+        Étudiant passionné par les réseaux, la cybersécurité et le développement logiciel,
+        je réalise divers projets académiques et personnels (C/SDL2, Java, vision, systèmes & cloud).
+      </p>
     </section>
-    
-    <section id="projects">
-        <h2>Projets</h2>
-        <div class="project-grid">
-            <div class="project">
-                <img src="images/pacman.jpg" alt="Pacman en C">
-                <h3>Pacman en C</h3>
-                <p>Développement d'un jeu Pacman en C avec SDL2.</p>
-                <a href="projet-pacman.html">En savoir plus</a>
-            </div>
-            <div class="project">
-                <img src="images/schotten.jpg" alt="Schotten Totten">
-                <h3>Schotten Totten (Java, IA)</h3>
-                <p>Implémentation d'un jeu de société en Java avec une IA basique.</p>
-                <a href="projet-schotten.html">En savoir plus</a>
-            </div>
-            <div class="project">
-                <img src="images/barcode.jpg" alt="Lecture de codes-barres">
-                <h3>Lecture de codes-barres</h3>
-                <p>Algorithme de segmentation pour reconnaître des codes EAN13.</p>
-                <a href="projet-barcode.html">En savoir plus</a>
-            </div>
-        </div>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projets</h2>
+      <div class="project-grid">
+        <article class="project">
+          <img
+            src="/assets/img/pacman.jpg"
+            alt="Capture du jeu Pacman développé en C avec SDL2"
+            width="640" height="360" loading="lazy" />
+          <h3>Pacman en C</h3>
+          <p>Développement d'un jeu Pacman en C avec SDL2 (gestion collisions & IA basique).</p>
+          <p>
+            <a href="/projet-pacman.html">En savoir plus</a>
+            ·
+            <a href="https://github.com/ryemele/pacman-c" target="_blank" rel="noopener">Code source</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <img
+            src="/assets/img/schotten.jpg"
+            alt="Aperçu du jeu Schotten Totten développé en Java avec IA"
+            width="640" height="360" loading="lazy" />
+          <h3>Schotten Totten (Java, IA)</h3>
+          <p>Implémentation d'un jeu de société en Java avec une IA basique.</p>
+          <p>
+            <a href="/projet-schotten.html">En savoir plus</a>
+            ·
+            <a href="https://github.com/ryemele/schotten-totten" target="_blank" rel="noopener">Code source</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <img
+            src="/assets/img/barcode.jpg"
+            alt="Illustration du projet de lecture de codes-barres EAN13"
+            width="640" height="360" loading="lazy" />
+          <h3>Lecture de codes-barres</h3>
+          <p>Algorithme de segmentation pour reconnaître des codes EAN13.</p>
+          <p>
+            <a href="/projet-barcode.html">En savoir plus</a>
+            ·
+            <a href="https://github.com/ryemele/ean13-reader" target="_blank" rel="noopener">Code source</a>
+          </p>
+        </article>
+      </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>📧 Email : rtabopdayem@bordeaux-inp.fr</p>
-        <p>🔗 <a href="https://github.com/ryemele">GitHub</a></p>
-        <p>🔗 <a href="https://linkedin.com/in/Richardson Yemele">LinkedIn</a></p>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>📧 Email :
+        <a href="mailto:rtabopdayem@bordeaux-inp.fr">rtabopdayem@bordeaux-inp.fr</a>
+      </p>
+      <p>🔗
+        <a href="https://github.com/ryemele" target="_blank" rel="noopener">GitHub</a>
+        ·
+        <!-- IMPORTANT : l’URL LinkedIn ne doit pas contenir d’espace -->
+        <a href="https://www.linkedin.com/in/richardson-yemele" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </section>
-    
-    <footer>
-        <p>&copy; 2025 Richardson Yemele - Tous droits réservés</p>
-    </footer>
+  </main>
+
+  <footer role="contentinfo">
+    <small>© <span id="year"></span> Richardson Yemele — Tous droits réservés</small>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
 </body>
 </html>
-
