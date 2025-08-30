@@ -81,9 +81,9 @@
 
 
         <div class="kpi">
-          <div><strong>Latence V2V (RTT)</strong><br/>≈ 20 ms via broker VPS (acceptable temps réel). :contentReference[oaicite:4]{index=4}</div>
-          <div><strong>UI temps réel</strong><br/>Contrôle joystick, carte capteurs, diagnostics (batterie/odom). :contentReference[oaicite:5]{index=5}</div>
-          <div><strong>ROS nodes</strong><br/>Bridge ROS↔MQTT (JSON), navigation, télémétrie. :contentReference[oaicite:6]{index=6}</div>
+          <div><strong>Latence V2V (RTT)</strong><br/>≈ 20 ms via broker VPS (acceptable temps réel).</div>
+          <div><strong>UI temps réel</strong><br/>Contrôle joystick, carte capteurs, diagnostics (batterie/odom). </div>
+          <div><strong>ROS nodes</strong><br/>Bridge ROS↔MQTT (JSON), navigation, télémétrie. </div>
         </div>
 
         <div class="btns">
@@ -98,11 +98,11 @@
         <h3 class="lang fr">Stack & architecture</h3>
         <h3 class="lang en">Stack & architecture</h3>
         <ul class="stack">
-          <li>ROS Noetic (Ubuntu 20.04) : nodes, topics, <em>launch</em>, TF, <code>/scan</code>, <code>/cmd_vel</code>, <code>/odom</code>. :contentReference[oaicite:7]{index=7}</li>
-          <li>Broker <strong>MQTT</strong> (Mosquitto) sur VPS : V2I + V2V médié (publish/subscribe, reconnexion). :contentReference[oaicite:8]{index=8}</li>
-          <li>Bridge ROS→MQTT (Python) : capteurs vers JSON (LiDAR, caméra, batterie, vitesse). :contentReference[oaicite:9]{index=9}</li>
-          <li>Web UI <strong>React/TypeScript</strong> : contrôle, carte capteurs, diagnostics via MQTT/WebSockets/ROSBridge. :contentReference[oaicite:10]{index=10}</li>
-          <li>Naming dynamique par IP : <code>robotX/*</code> (e.g. <code>robot7/scan</code>), évite conflits inter-robots. :contentReference[oaicite:11]{index=11}</li>
+          <li>ROS Noetic (Ubuntu 20.04) : nodes, topics, <em>launch</em>, TF, <code>/scan</code>, <code>/cmd_vel</code>, <code>/odom</code>. </li>
+          <li>Broker <strong>MQTT</strong> (Mosquitto) sur VPS : V2I + V2V médié (publish/subscribe, reconnexion). </li>
+          <li>Bridge ROS→MQTT (Python) : capteurs vers JSON (LiDAR, caméra, batterie, vitesse). </li>
+          <li>Web UI <strong>React/TypeScript</strong> : contrôle, carte capteurs, diagnostics via MQTT/WebSockets/ROSBridge. </li>
+          <li>Naming dynamique par IP : <code>robotX/*</code> (e.g. <code>robot7/scan</code>), évite conflits inter-robots. </li>
         </ul>
 
         <h3 class="lang fr">Rôle personnel</h3>
@@ -169,11 +169,11 @@
       <h3 class="lang en">References & context</h3>
       <p class="lang fr">
         Sujet AUTOMA (objectif, cas d’usage, ITS-G5, TurtleBot3) et rapport final (ROS, MQTT, V2I/V2V, UI web, résultats) :
-        :contentReference[oaicite:22]{index=22} :contentReference[oaicite:23]{index=23}
+        
       </p>
       <p class="lang en">
         Official AUTOMA brief (scope, ITS-G5, TurtleBot3) and final report (ROS, MQTT, V2I/V2V, web UI, results):
-        :contentReference[oaicite:24]{index=24} :contentReference[oaicite:25]{index=25}
+        
       </p>
     </section>
   </main>
@@ -232,3 +232,4 @@
   </script>
 </body>
 </html>
+
