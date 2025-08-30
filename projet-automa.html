@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AUTOMA — Flotte multi-robots (ROS, MQTT, V2V/V2I) · Richardson Yemele</title>
+  <meta name="description" content="Projet AUTOMA (5 mois) : flotte TurtleBot3, ROS, MQTT, V2V/V2I via broker distant, UI web React/TS, suivi de trajectoire et télémétrie temps réel." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    .hero { max-width:1000px; margin:24px auto; padding:0 16px; }
+    .meta { color:#888; margin:6px 0 16px }
+    .two-col { display:grid; grid-template-columns: 1fr; gap:24px; }
+    @media (min-width: 900px){ .two-col { grid-template-columns: 1.35fr .85fr; } }
+    .stack, .bullets { margin:0; padding-left:18px; }
+    .kpi { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:10px; margin:14px 0; }
+    .kpi > div { background:#fff; border-radius:10px; padding:10px 12px; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+    .gallery img { border-radius:10px; cursor: zoom-in; }
+    /* Lightbox */
+    .lightbox { position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:9999; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:90vw; max-height:85vh; border-radius:8px; }
+    .lightbox .close { position:absolute; top:16px; right:20px; font-size:28px; color:#fff; cursor:pointer; }
+    .btns a { display:inline-block; margin-right:10px; }
+    .tag { display:inline-block; font-size:.85rem; padding:2px 8px; border-radius:999px; background:#eef; margin:2px 6px 0 0; }
+  </style>
+</head>
+<body>
+  <a href="/#projects" class="skip-link">← Retour au portfolio</a>
+
+  <header class="site-header">
+    <div class="id-block">
+      <img src="/assets/img/photo.jpg" alt="Photo de profil de Richardson Yemele" class="avatar" width="96" height="96" />
+      <div>
+        <h1>
+          <span class="lang fr">AUTOMA — Flotte multi-robots (ROS, MQTT, V2V/V2I)</span>
+          <span class="lang en">AUTOMA — Multi-robot fleet (ROS, MQTT, V2V/V2I)</span>
+        </h1>
+        <p class="meta">
+          <span class="lang fr">Projet académique S8 — durée : 5 mois · ENSEIRB-MATMECA · Équipe de 8</span>
+          <span class="lang en">Academic project (S8) — duration: 5 months · ENSEIRB-MATMECA · Team of 8</span>
+        </p>
+        <div>
+          <span class="tag">ROS Noetic</span><span class="tag">MQTT (Mosquitto)</span><span class="tag">V2V/V2I</span>
+          <span class="tag">LiDAR + Camera</span><span class="tag">React + TypeScript</span><span class="tag">WebSockets/ROSBridge</span>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="/#about">À propos</a></li>
+        <li><a href="/#projects">Projets</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang-switch">
+      <button data-lang="fr" aria-pressed="true">FR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="two-col">
+      <article>
+        <h2 class="lang fr">Résumé</h2>
+        <h2 class="lang en">Summary</h2>
+        
+                <p class="lang fr">
+          Plateforme robotique inspirée véhicule connecté : deux <em>TurtleBot3</em> orchestrés par <strong>ROS</strong>,
+          communiquant via <strong>MQTT chiffré en TLS/SSL</strong> et <strong>ITS-G5</strong> pour la V2I/V2V.
+          Données LiDAR, caméra, batterie et vitesse transmises de façon sécurisée vers un broker VPS et
+          vers des pairs, puis visualisées sur une interface <strong>React/TypeScript</strong>.
+        </p>
+        
+        <p class="lang en">
+          Robotics platform inspired by connected-vehicle use cases: two <em>TurtleBot3</em> controlled with <strong>ROS</strong>,
+          exchanging data over <strong>TLS/SSL-encrypted MQTT</strong> and <strong>ITS-G5</strong> for V2I/V2V.
+          LiDAR, camera, battery and velocity data securely published to a VPS broker and peers,
+          visualized in a <strong>React/TypeScript</strong> interface.
+        </p>
+
+
+        <div class="kpi">
+          <div><strong>Latence V2V (RTT)</strong><br/>≈ 20 ms via broker VPS (acceptable temps réel). :contentReference[oaicite:4]{index=4}</div>
+          <div><strong>UI temps réel</strong><br/>Contrôle joystick, carte capteurs, diagnostics (batterie/odom). :contentReference[oaicite:5]{index=5}</div>
+          <div><strong>ROS nodes</strong><br/>Bridge ROS↔MQTT (JSON), navigation, télémétrie. :contentReference[oaicite:6]{index=6}</div>
+        </div>
+
+        <div class="btns">
+          <a class="lang fr" href="https://github.com/ryemele/automa" target="_blank" rel="noopener">Code source</a>
+          <a class="lang en" href="https://github.com/ryemele/automa" target="_blank" rel="noopener">Source code</a>
+          <a href="/assets/docs/automa-slides.pdf" target="_blank" rel="noopener">Slides</a>
+          <a href="/assets/docs/automa-report.pdf" target="_blank" rel="noopener">Report</a>
+        </div>
+      </article>
+
+      <aside>
+        <h3 class="lang fr">Stack & architecture</h3>
+        <h3 class="lang en">Stack & architecture</h3>
+        <ul class="stack">
+          <li>ROS Noetic (Ubuntu 20.04) : nodes, topics, <em>launch</em>, TF, <code>/scan</code>, <code>/cmd_vel</code>, <code>/odom</code>. :contentReference[oaicite:7]{index=7}</li>
+          <li>Broker <strong>MQTT</strong> (Mosquitto) sur VPS : V2I + V2V médié (publish/subscribe, reconnexion). :contentReference[oaicite:8]{index=8}</li>
+          <li>Bridge ROS→MQTT (Python) : capteurs vers JSON (LiDAR, caméra, batterie, vitesse). :contentReference[oaicite:9]{index=9}</li>
+          <li>Web UI <strong>React/TypeScript</strong> : contrôle, carte capteurs, diagnostics via MQTT/WebSockets/ROSBridge. :contentReference[oaicite:10]{index=10}</li>
+          <li>Naming dynamique par IP : <code>robotX/*</code> (e.g. <code>robot7/scan</code>), évite conflits inter-robots. :contentReference[oaicite:11]{index=11}</li>
+        </ul>
+
+        <h3 class="lang fr">Rôle personnel</h3>
+        <h3 class="lang en">Personal role</h3>
+        <ul class="bullets lang fr">
+          <li>Intégration ROS↔MQTT et schéma de topics <code>robotX/</code> (naming IP, QoS clés).</li>
+          <li>Chaîne V2I sur VPS (mosquitto, reconnect, persistance) + supervision.</li>
+          <li>Implémentation suivi de ligne + arrêt obstacle (fusion LiDAR/caméra) et alertes V2V.</li>
+          <li>Conception UI (contrôle, map, statut) + flux temps réel.</li>
+        </ul>
+        <ul class="bullets lang en">
+          <li>ROS↔MQTT integration and <code>robotX/</code> topic design (IP-based naming, key QoS).</li>
+          <li>V2I chain on VPS (mosquitto, reconnect, persistence) + monitoring.</li>
+          <li>Line-following + obstacle stop (LiDAR/camera fusion) and V2V alerts.</li>
+          <li>UI design (control, map, status) + real-time data flow.</li>
+        </ul>
+      </aside>
+    </section>
+
+<section>
+  <h3 class="lang fr">Défis techniques & décisions clés</h3>
+  <h3 class="lang en">Technical challenges & key decisions</h3>
+  <ul class="bullets lang fr">
+    <li><strong>Synchronisation capteurs/commande</strong> : tuning du loop rate + QoS sur les topics critiques
+    pour garantir la réactivité sans à-coups.</li>
+    <li><strong>ITS-G5 opérationnel</strong> : la stack ITS-G5 a été intégrée pour permettre une communication directe
+    V2V en parallèle du broker MQTT, réduisant la latence et respectant les standards ITS européens.</li>
+    <li><strong>TLS/SSL (MQTTs)</strong> : toutes les communications avec le broker VPS sont chiffrées en TLS/SSL
+    (port 8883), avec certificats X.509 pour authentification et intégrité des flux (LiDAR, caméra, odométrie).</li>
+    <li><strong>Scalabilité</strong> : schéma de noms dynamiques par IP (<code>robotX/</code>) garantissant l’unicité des topics,
+    le debug et l’ajout de robots sans reconfiguration manuelle.</li>
+    <li><strong>Infra données</strong> : API+DB pour stocker la télémétrie en temps réel (positions, alertes, diagnostics)
+    et la visualiser depuis le dashboard web React/TS.</li>
+  </ul>
+
+  <ul class="bullets lang en">
+    <li><strong>Sensor/command sync</strong>: tuned loop rate + QoS on critical topics to ensure responsive control
+    without halts.</li>
+    <li><strong>ITS-G5 implemented</strong>: the ITS-G5 stack was integrated to provide direct V2V communication
+    alongside the MQTT broker, reducing latency and complying with European ITS standards.</li>
+    <li><strong>TLS/SSL (MQTTs)</strong>: all broker communications are encrypted with TLS/SSL (port 8883), using
+    X.509 certificates for authentication and ensuring data integrity (LiDAR, camera, odometry streams).</li>
+    <li><strong>Scalability</strong>: dynamic IP-based naming scheme (<code>robotX/</code>) ensures topic uniqueness, clean
+    debugging, and seamless fleet growth.</li>
+    <li><strong>Data infra</strong>: API+DB collect telemetry in real time (position, alerts, diagnostics) and feed the
+    React/TS dashboard for visualization.</li>
+  </ul>
+</section>
+
+    <section>
+      <h3 class="lang fr">Galerie</h3>
+      <h3 class="lang en">Gallery</h3>
+      <div class="gallery">
+        <img src="/assets/img/automa.jpg" alt="Architecture AUTOMA (robots, broker, V2I/V2V)" />
+        <img src="/assets/img/automa-robots.jpg" alt="Robots TurtleBot3 en test de trajectoire" />
+        <img src="/assets/img/automa-rviz.jpg" alt="ROS RViz — LiDAR / odométrie" />
+        <img src="/assets/img/automa-ui-control.png" alt="UI React/TS — page de contrôle" />
+        <img src="/assets/img/automa-map.png" alt="UI — cartographie LiDAR/caméra" />
+      </div>
+    </section>
+
+    <section>
+      <h3 class="lang fr">Références & contexte</h3>
+      <h3 class="lang en">References & context</h3>
+      <p class="lang fr">
+        Sujet AUTOMA (objectif, cas d’usage, ITS-G5, TurtleBot3) et rapport final (ROS, MQTT, V2I/V2V, UI web, résultats) :
+        :contentReference[oaicite:22]{index=22} :contentReference[oaicite:23]{index=23}
+      </p>
+      <p class="lang en">
+        Official AUTOMA brief (scope, ITS-G5, TurtleBot3) and final report (ROS, MQTT, V2I/V2V, web UI, results):
+        :contentReference[oaicite:24]{index=24} :contentReference[oaicite:25]{index=25}
+      </p>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lb" aria-hidden="true">
+    <span class="close" role="button" aria-label="Close">×</span>
+    <img alt="">
+  </div>
+
+  <footer role="contentinfo">
+    <small>© <span id="year"></span> Richardson Yemele</small>
+  </footer>
+
+  <script>
+    // Bilingue (même logique que l’index)
+    (function(){
+      const root = document.body;
+      const btns = document.querySelectorAll('.lang-switch button');
+      const saved = localStorage.getItem('lang') || 'fr';
+      setLang(saved);
+      btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+      function setLang(code){
+        const isEN = code === 'en';
+        root.classList.toggle('lang-en', isEN);
+        btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === code));
+        localStorage.setItem('lang', code);
+      }
+    })();
+
+    // Lightbox
+    (function(){
+      const lb = document.getElementById('lb');
+      const lbImg = lb.querySelector('img');
+      document.querySelectorAll('.gallery img').forEach(img=>{
+        img.addEventListener('click', ()=>{
+          lbImg.src = img.src;
+          lb.classList.add('open');
+          lb.setAttribute('aria-hidden','false');
+        });
+      });
+      lb.addEventListener('click', (e)=>{
+        if(e.target === lb || e.target.classList.contains('close')){
+          lb.classList.remove('open');
+          lb.setAttribute('aria-hidden','true');
+          lbImg.src = '';
+        }
+      });
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape' && lb.classList.contains('open')){
+          lb.click();
+        }
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
