@@ -34,14 +34,27 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="lang-switch">
+      <button data-lang="fr" aria-pressed="true">FR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+
   </header>
 
   <main id="main">
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">À propos</h2>
-      <p>Étudiant passionné par les réseaux, la cybersécurité le développement logiciel et les environnements Cloud
-        je réalise divers projets académiques et personnels (C/SDL2, Java, vision, systèmes & cloud, Python, ROS & ITS-G5).</p>
-    </section>
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title"><span class="lang fr">À propos</span><span class="lang en">About</span></h2>
+  
+    <p class="lang fr">
+      Étudiant passionné par les réseaux, la cybersécurité et le développement logiciel, je réalise divers projets
+      académiques et personnels (C/SDL2, Java, vision, systèmes & cloud, Python, ROS & ITS-G5).
+    </p>
+    <p class="lang en">
+      Engineering student focused on networking, cybersecurity, and software development. I build academic and personal
+      projects (C/SDL2, Java, computer vision, systems & cloud, Python, ROS & ITS-G5).
+    </p>
+  </section>
+
 
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projets</h2>
@@ -49,7 +62,9 @@
         <article class="project">
           <img src="/assets/img/pacman.jpeg" alt="Capture du jeu Pacman développé en C avec SDL2" width="640" height="360" loading="lazy" />
           <h3>Pacman en C</h3>
-          <p>Développement d'un jeu Pacman en C avec SDL2 (gestion collisions & IA basique).</p>
+          <p class="lang fr">Développement d'un Pacman en C/SDL2 (gestion collisions & IA basique).</p>
+          <p class="lang en">Pacman built in C/SDL2 (collision handling & basic ghost AI).</p>
+          
           <p>
             <a href="/projet-pacman.html">En savoir plus</a> ·
             <a href="https://github.com/ryemele/pacman" target="_blank" rel="noopener">Code source</a>
@@ -146,5 +161,25 @@
     <small>© <span id="year"></span> Richardson Yemele — Tous droits réservés</small>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
+
+  <script>
+  (function(){
+    const root = document.body;
+    const btns = document.querySelectorAll('.lang-switch button');
+    // état initial depuis le localStorage ou FR
+    const saved = localStorage.getItem('lang') || 'fr';
+    setLang(saved);
+
+    btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+    function setLang(code){
+      const isEN = code === 'en';
+      root.classList.toggle('lang-en', isEN);
+      btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === code));
+      localStorage.setItem('lang', code);
+    }
+  })();
+</script>
+
 </body>
 </html>
