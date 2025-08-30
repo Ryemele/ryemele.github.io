@@ -118,3 +118,15 @@ footer {
   padding: 16px;
   /* pas de position fixed/absolute: évite les chevauchements */
 }
+
+/* Bilingue */
+.lang.en { display: none; }
+body.lang-en .lang.fr { display: none; }
+body.lang-en .lang.en { display: block; }
+
+.lang-switch { display: inline-flex; gap: 8px; margin-top: 8px; }
+.lang-switch button {
+  background: #555; color: #fff; border: 0; padding: 6px 10px; border-radius: 8px; cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] { background: #0b63f6; }
+
