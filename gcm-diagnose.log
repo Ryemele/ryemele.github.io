@@ -1,0 +1,187 @@
+﻿Diagnose log at 2025-10-30T18:31:23Z
+
+AppPath: /usr/local/bin/git-credential-manager
+InstallDir: /usr/local/share/gcm-core/
+Version: 2.6.1+786ab03440ddc82e807a97c0e540f5247e44cec6
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Linux
+OSVersion: Ubuntu 24.04.3 LTS
+Reading environment variables... OK
+ Variables:
+MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure
+LANG=fr_FR.UTF-8
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=
+PATH=/usr/lib/git-core:/home/richy/anaconda3/condabin:/home/richy/anaconda3/bin:/usr/local/MATLAB/R2024b/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/richy/Téléchargements/xgraph_4.38_linux64/XGraph4.38_linux64/bin
+GSM_SKIP_SSH_AGENT_WORKAROUND=true
+PWD=/home/richy/Documents/Github_projects/main/ryemele.github.io
+XDG_RUNTIME_DIR=/run/user/1000
+WINDOWPATH=2
+CONDA_SHLVL=0
+XDG_SESSION_DESKTOP=ubuntu
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SESSION_MANAGER=local/richsbook4:@/tmp/.ICE-unix/3690,unix/richsbook4:/tmp/.ICE-unix/3690
+_CE_M=
+USERNAME=richy
+XMODIFIERS=@im=ibus
+SHLVL=1
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+XAUTHORITY=/run/user/1000/gdm/Xauthority
+DEBUGINFOD_URLS=https://debuginfod.ubuntu.com 
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/d4c52e92_b827_42de_85c6_2bb9fbdb3adc
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+SHELL=/bin/bash
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+XDG_SESSION_CLASS=user
+QTWEBENGINE_DICTIONARIES_PATH=/usr/share/hunspell-bdic/
+LESSCLOSE=/usr/bin/lesspipe %s %s
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+XDG_MENU_PREFIX=gnome-
+QT_IM_MODULE=ibus
+GIT_EXEC_PATH=/usr/lib/git-core
+HOME=/home/richy
+OLDPWD=/home/richy/Documents/Github_projects/main
+VTE_VERSION=7600
+DESKTOP_SESSION=ubuntu
+GIT_TRACE2_PARENT_SID=432ec99a-d8b5-4ea0-944f-258b2f02285b
+TERM=xterm-256color
+SYSTEMD_EXEC_PID=3866
+COLORTERM=truecolor
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:
+_CE_CONDA=
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+USER=richy
+DISPLAY=:1
+GNOME_TERMINAL_SERVICE=:1.101
+_=/usr/bin/git
+GNOME_SHELL_SESSION_MODE=ubuntu
+GTK_MODULES=gail:atk-bridge
+LESSOPEN=| /usr/bin/lesspipe %s
+QT_ACCESSIBILITY=1
+GDMSESSION=ubuntu
+XDG_SESSION_TYPE=x11
+CONDA_EXE=/home/richy/anaconda3/bin/conda
+CONDA_PYTHON_EXE=/home/richy/anaconda3/bin/python
+LOGNAME=richy
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is '/tmp/'...
+Checking basic file I/O...
+Writing to temporary file '/tmp/3a2c4f1d809f0e84e897bdf9'... OK
+Reading from temporary file '/tmp/3a2c4f1d809f0e84e897bdf9'... OK
+Deleting temporary file '/tmp/3a2c4f1d809f0e84e897bdf9'... OK
+Testing IFileSystem instance...
+UserHomePath: /home/richy
+UserDataDirectoryPath: /home/richy/.gcm
+GetCurrentDirectory(): /home/richy/Documents/Github_projects/main/ryemele.github.io
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:39155/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.43.0'
+Locating current repository...Git repository at '/home/richy/Documents/Github_projects/main/ryemele.github.io/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:/home/richy/.gitconfig	user.email=richyemele@gmail.com
+file:/home/richy/.gitconfig	credential.helper=manager
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/Ryemele/ryemele.github.io.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	pull.rebase=false
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: False
+Exception:
+System.Exception: No credential store has been selected.
+
+Set the GCM_CREDENTIAL_STORE environment variable or the credential.credentialStore Git configuration setting to one of the following options:
+
+  secretservice : freedesktop.org Secret Service (requires graphical interface)
+  gpg           : GNU `pass` compatible credential storage (requires GPG and `pass`)
+  cache         : Git's in-memory credential cache
+  plaintext     : store credentials in plain-text files (UNSECURE)
+  none          : disable internal credential storage
+
+See https://aka.ms/gcm/credstores for more information.
+
+   at GitCredentialManager.CredentialStore.EnsureBackingStore()
+   at GitCredentialManager.CredentialStore.Remove(String service, String account)
+   at GitCredentialManager.Diagnostics.CredentialStoreDiagnostic.RunInternalAsync(StringBuilder log, IList`1 additionalFiles)
+   at GitCredentialManager.Diagnostics.Diagnostic.RunAsync()
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential...Deleting test credential...
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: /home/richy/.local/.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: /home/richy/.local/.IdentityService/msal.cache
+KeyringCollection: 
+KeyringSchemaName: 
+KeyringSecretLabel: 
+KeyringAttribute1: (,)
+KeyringAttribute2: (,)
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

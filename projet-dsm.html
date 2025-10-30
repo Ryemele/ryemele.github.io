@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Distributed Shared Memory (DSM) · Richardson Yemele</title>
+  <meta name="description" content="Implémentation d'une mémoire partagée distribuée (DSM) – projet ENSEIRB-MATMECA réalisé en C sur 2 phases : dsmexec et bibliothèque DSM, gestion des fautes de segmentation, sockets, threads et synchronisation inter-processus." />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <a href="/#projects" class="skip-link">← Retour au portfolio</a>
+
+  <header class="site-header">
+    <div class="id-block">
+      <img src="/assets/img/photo.jpg" alt="Photo de Richardson Yemele" class="avatar" width="96" height="96" />
+      <div>
+        <h1>
+          <span class="lang fr">Mémoire Partagée Distribuée (DSM)</span>
+          <span class="lang en">Distributed Shared Memory (DSM)</span>
+        </h1>
+        <p class="meta">
+          <span class="lang fr">Projet Système & Réseaux (PR204) — ENSEIRB-MATMECA · Encadrants : Joachim Bruneau-Queyreix, Guillaume Mercier, Philippe Swartvagher</span>
+          <span class="lang en">Systems & Networks Project (PR204) — ENSEIRB-MATMECA · Supervisors: Joachim Bruneau-Queyreix, Guillaume Mercier, Philippe Swartvagher</span>
+        </p>
+        <div>
+          <span class="tag">C</span><span class="tag">Sockets</span><span class="tag">Threads</span><span class="tag">Signals</span><span class="tag">IPC</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="two-col">
+      <article>
+        <h2 class="lang fr">Résumé</h2>
+        <h2 class="lang en">Summary</h2>
+
+        <p class="lang fr">
+          Conception et implémentation complète d’une <strong>mémoire partagée distribuée (DSM)</strong> permettant à plusieurs processus répartis sur différentes machines
+          d’accéder à une <strong>même plage d’adresses mémoire virtuelle</strong>.
+          Le système capture les <strong>erreurs de segmentation</strong> (SIGSEGV) et transfère dynamiquement la propriété des pages entre processus via des <strong>sockets TCP</strong>.
+          Le projet s’est déroulé sur 2 phases : <em>dsmexec</em> (lancement & communication des processus) et <em>bibliothèque DSM</em> (gestion mémoire et cohérence).
+        </p>
+
+        <p class="lang en">
+          Design and implementation of a <strong>Distributed Shared Memory (DSM)</strong> system allowing multiple processes across different machines
+          to access a <strong>common virtual memory space</strong>.
+          The system intercepts <strong>segmentation faults</strong> (SIGSEGV) and dynamically transfers page ownership between processes via <strong>TCP sockets</strong>.
+          The project was structured in two phases: <em>dsmexec</em> (process launching & communication) and <em>DSM library</em> (memory management & consistency).
+        </p>
+
+        <div class="btns">
+          <a href="https://github.com/ryemele/dsm-project" target="_blank" rel="noopener">Code source</a>
+          <a href="/assets/docs/Rapport_PR204.pdf" target="_blank" rel="noopener">Rapport complet</a>
+        </div>
+      </article>
+
+      <aside>
+        <h3 class="lang fr">Architecture & Techniques</h3>
+        <h3 class="lang en">Architecture & Techniques</h3>
+        <ul class="lang fr">
+          <li><strong>dsmexec :</strong> lance les processus distants via <em>SSH</em> et gère les connexions TCP.</li>
+          <li><strong>dsmwrap :</strong> wrapper intermédiaire pour initialiser les variables d’environnement.</li>
+          <li><strong>dsm_init :</strong> connexion entre pairs et allocation des pages en round-robin.</li>
+          <li><strong>segv_handler :</strong> rattrape SIGSEGV et déclenche les requêtes DSM_REQ / DSM_PAGE.</li>
+          <li><strong>dsm_comm_daemon :</strong> thread d’écoute permanent pour traiter les requêtes.</li>
+        </ul>
+        <ul class="lang en">
+          <li><strong>dsmexec:</strong> launches remote processes via <em>SSH</em> and manages TCP connections.</li>
+          <li><strong>dsmwrap:</strong> intermediate wrapper initializing environment variables.</li>
+          <li><strong>dsm_init:</strong> establishes peer connections and allocates pages round-robin.</li>
+          <li><strong>segv_handler:</strong> catches SIGSEGV and triggers DSM_REQ / DSM_PAGE messages.</li>
+          <li><strong>dsm_comm_daemon:</strong> background thread handling incoming page requests.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <h3 class="lang fr">Protocoles & Messages</h3>
+      <h3 class="lang en">Protocols & Messages</h3>
+      <ul class="lang fr">
+        <li><strong>DSM_REQ :</strong> demande d’accès à une page manquante.</li>
+        <li><strong>DSM_PAGE :</strong> transfert d’une page au processus demandeur.</li>
+        <li><strong>DSM_NEWPROP :</strong> notification de changement de propriétaire de page.</li>
+        <li><strong>DSM_FINALIZE :</strong> synchronisation et terminaison propre des processus.</li>
+      </ul>
+      <ul class="lang en">
+        <li><strong>DSM_REQ:</strong> request for a missing memory page.</li>
+        <li><strong>DSM_PAGE:</strong> transfer of a memory page to the requesting process.</li>
+        <li><strong>DSM_NEWPROP:</strong> broadcast page ownership update to all peers.</li>
+        <li><strong>DSM_FINALIZE:</strong> coordinated clean shutdown of all processes.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3 class="lang fr">Résultats & Apports</h3>
+      <h3 class="lang en">Results & Achievements</h3>
+      <ul class="lang fr">
+        <li>Architecture DSM fonctionnelle avec transferts dynamiques de pages.</li>
+        <li>Communication fiable via sockets et synchronisation par sémaphores.</li>
+        <li>Gestion correcte des fautes de segmentation et cohérence des pages.</li>
+        <li>Optimisation du débogage et réduction des fuites mémoire.</li>
+      </ul>
+      <ul class="lang en">
+        <li>Functional DSM architecture with dynamic page transfers.</li>
+        <li>Reliable socket communication and semaphore-based synchronization.</li>
+        <li>Proper segmentation fault handling and page ownership consistency.</li>
+        <li>Improved debugging and reduced memory leaks.</li>
+      </ul>
+
+      <div class="gallery">
+        <img src="/assets/img/dsm-arch.png" alt="Architecture DSM – connexions inter-processus" />
+        <img src="/assets/img/dsm-flow.png" alt="Flux DSM_REQ / DSM_PAGE" />
+      </div>
+    </section>
+
+    <section>
+      <h3 class="lang fr">Compétences développées</h3>
+      <h3 class="lang en">Skills developed</h3>
+      <ul class="lang fr">
+        <li>Programmation système avancée en C (sockets, threads, signaux).</li>
+        <li>Conception d’un protocole applicatif distribué.</li>
+        <li>Synchronisation inter-processus et cohérence mémoire.</li>
+        <li>Débogage bas niveau sur systèmes UNIX distribués.</li>
+      </ul>
+      <ul class="lang en">
+        <li>Advanced systems programming in C (sockets, threads, signals).</li>
+        <li>Design of a distributed application-level protocol.</li>
+        <li>Inter-process synchronization and memory coherence.</li>
+        <li>Low-level debugging across distributed UNIX systems.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <small>© <span id="year"></span> Richardson Yemele</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
